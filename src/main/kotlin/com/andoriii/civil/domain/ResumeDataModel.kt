@@ -3,11 +3,11 @@ package com.andoriii.civil.domain
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table
 
-@Table("SENADOR")
-data class SenadorDataModel(
+@Table("resumes")
+data class ResumeDataModel(
     @Id val id: String?,
     val name: String,
-    val birthdate: String,
+    val birthdate: String?,
     val politicalParty: String?,
     val localBirth: String?,
     val address: String?,
@@ -24,8 +24,8 @@ data class SenadorDataModel(
             address: String? = null,
             telephone: String? = null,
             email: String? = null
-        ): SenadorDataModel {
-            return SenadorDataModel(
+        ): ResumeDataModel {
+            return ResumeDataModel(
                 id = id,
                 name = name,
                 birthdate = birthdate,
