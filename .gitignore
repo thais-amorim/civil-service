@@ -25,3 +25,5 @@ hs_err_pid*
 # Temporary files
 .gradle/**
 build/**
+.idea/**
+data/**

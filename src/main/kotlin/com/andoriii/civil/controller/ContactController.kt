@@ -9,12 +9,19 @@ import org.springframework.web.bind.annotation.*
 class ContactController(val service: ResumeDataService) {
 
     @GetMapping
-    fun getContact(): ResumeDataModel {
-        return ResumeDataModel.build("Cid Gomes", "27/04/1963")
+    fun getAllContacts(): List<ResumeDataModel> {
+        return service.getAllResumes()
+    }
+
+    @GetMapping("/{contact-party}")
+    fun getSingleContact(@PathVariable("contact-party") politicalParty: String): List<ResumeDataModel> {
+        return service.getAllByPoliticalParty(politicalParty)
     }
 
     @PostMapping
     fun saveContact(@RequestBody data: ResumeDataModel) {
         service.post(data)
     }
+
+//
 }
