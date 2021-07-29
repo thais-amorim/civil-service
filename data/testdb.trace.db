@@ -352,3 +352,6 @@ Caused by: java.nio.channels.OverlappingFileLockException
 2021-07-27 22:10:26 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO RESUMES (NAME,BIRTHDATE,POLITICALPARTY,LOCALBIRTH,ADDRESS,TELEPHONE,EMAIL)VALUES ('Cid Gomes','27/04/1963','PDT','Sobral - CE',' Senado Federal Anexo 1 10º Pavimento',' (61) 3303-6460 / 6399','sen.cidgomes@senado.leg.br'),[*]"; expected "ROW, (, DEFAULT, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
 INSERT INTO resumes (name,birthdate,politicalParty,localBirth,address,telephone,email)VALUES ('Cid Gomes','27/04/1963','PDT','Sobral - CE',' Senado Federal Anexo 1 10º Pavimento',' (61) 3303-6460 / 6399','sen.cidgomes@senado.leg.br'), [42001-200]
+2021-07-28 23:31:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "resumes" not found; SQL statement:
+DELETE FROM "resumes" [42102-200]
