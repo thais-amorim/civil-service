@@ -10,7 +10,8 @@ data class ResumeDataModel(
     val name: String,
     @Column("birth_date") val birthDate: String?,
     @Column("political_party") val politicalParty: String?,
-    @Column("local_birth") val localBirth: String?,
+    @Column("birth_city") val localBirth: String?,
+    val state: String?,
     val address: String?,
     val telephone: String?,
     val email: String?
@@ -18,10 +19,11 @@ data class ResumeDataModel(
     companion object {
         fun build(
             name: String,
-            birthdate: String,
+            birthDate: String,
             id: String? = null,
-            politicalparty: String? = null,
-            localbirth: String? = null,
+            politicalParty: String? = null,
+            localBirth: String? = null,
+            state: String? = null,
             address: String? = null,
             telephone: String? = null,
             email: String? = null
@@ -29,9 +31,10 @@ data class ResumeDataModel(
             return ResumeDataModel(
                 id = id,
                 name = name,
-                birthDate = birthdate,
-                politicalParty = politicalparty,
-                localBirth = localbirth,
+                birthDate = birthDate,
+                politicalParty = politicalParty,
+                localBirth = localBirth,
+                state = state,
                 address = address,
                 telephone = telephone,
                 email = email

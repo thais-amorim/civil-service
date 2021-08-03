@@ -13,9 +13,14 @@ class ContactController(val service: ResumeDataService) {
         return service.getAllResumes()
     }
 
-    @GetMapping("/{contact-party}")
-    fun getSingleContact(@PathVariable("contact-party") politicalParty: String): List<ResumeDataModel> {
-        return service.getAllByPoliticalParty(politicalParty)
+    @GetMapping(params = ["party"])
+    fun getResumesByParty(@RequestParam party: String): List<ResumeDataModel> {
+        return service.getAllByPoliticalParty(party)
+    }
+
+    @GetMapping(params = ["state"])
+    fun getResumesByState(@RequestParam state: String): List<ResumeDataModel> {
+        return service.getAllByState(state)
     }
 
     @PostMapping
@@ -23,5 +28,4 @@ class ContactController(val service: ResumeDataService) {
         service.post(data)
     }
 
-//
 }

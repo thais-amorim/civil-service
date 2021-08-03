@@ -13,5 +13,7 @@ class ResumeDataService(val db: ResumeDataRepository) {
 
     fun getAllByPoliticalParty(name: String) = db.getAllByParty(name)
 
+    fun getAllByState(name: String) = db.getAllByState(name)
+
     fun post(data: ResumeDataModel) = db.save(data)
 }
