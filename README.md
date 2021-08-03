@@ -7,7 +7,9 @@ https://www25.senado.leg.br/web/senadores/por-uf/-/uf/CE
 ```
 curl -sX GET http://localhost:8080/contact?state=CE | jq .
 
-curl -sX GET http://localhost:8080/contact/PSDB | jq .
+curl -sX GET http://localhost:8080/contact?party=PSDB | jq .
+
+curl -sX GET http://localhost:8080/contact/2 | jq .
 ```
 
 ### License

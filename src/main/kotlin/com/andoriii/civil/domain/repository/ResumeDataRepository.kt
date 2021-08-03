@@ -10,8 +10,8 @@ interface ResumeDataRepository : CrudRepository<ResumeDataModel, String> {
     @Query("SELECT * FROM resumes")
     fun findResumes(): List<ResumeDataModel>
 
-    @Query("SELECT r FROM resumes r WHERE r.name = :name")
-    fun findSingleResume(@Param("name") name: String): ResumeDataModel
+    @Query("SELECT * FROM resumes r WHERE r.id = :id LIMIT 1")
+    fun getById(@Param("id") id: String): ResumeDataModel
 
     @Query("SELECT * FROM resumes r WHERE r.political_party = :name")
     fun getAllByParty(@Param("name") name: String): List<ResumeDataModel>

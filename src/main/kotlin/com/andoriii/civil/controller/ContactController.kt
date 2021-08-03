@@ -13,6 +13,11 @@ class ContactController(val service: ResumeDataService) {
         return service.getAllResumes()
     }
 
+    @GetMapping("/{id}")
+    fun getById(@PathVariable id: String): ResumeDataModel {
+        return service.getResumeById(id)
+    }
+
     @GetMapping(params = ["party"])
     fun getResumesByParty(@RequestParam party: String): List<ResumeDataModel> {
         return service.getAllByPoliticalParty(party)

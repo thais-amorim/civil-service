@@ -9,7 +9,7 @@ class ResumeDataService(val db: ResumeDataRepository) {
 
     fun getAllResumes(): List<ResumeDataModel> = db.findResumes()
 
-    fun getSingleResume(name: String) = db.findSingleResume(name)
+    fun getResumeById(id: String) = db.getById(id)
 
     fun getAllByPoliticalParty(name: String) = db.getAllByParty(name)
 
